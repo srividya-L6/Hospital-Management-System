@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hospital Management System</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg bg-primary navbar-dark">
+<div class="container">
+<a class="navbar-brand fw-bold" href="#" onclick="showHome()">Hospital Management System</a>
+<div>
+<button class="btn btn-light btn-sm me-2" onclick="showLogin()">Login</button>
+<button class="btn btn-outline-light btn-sm" onclick="showRegister()">Patient Register</button>
+</div>
+</div>
+</nav>
+
+<main class="container py-5">
+<section id="home">
+<div class="p-5 rounded hero">
+<h1>Hospital Management System</h1>
+<p class="lead">A simple web-based system for patients, doctors and administrators.</p>
+<button class="btn btn-primary" onclick="showLogin()">Get Started</button>
+</div>
+<div class="row mt-4 g-3">
+<div class="col-md-4"><div class="card h-100"><div class="card-body"><h4>Patients</h4><p>Register, book appointments, view prescriptions and record payments.</p></div></div></div>
+<div class="col-md-4"><div class="card h-100"><div class="card-body"><h4>Doctors</h4><p>View appointments, search patients and add prescriptions.</p></div></div></div>
+<div class="col-md-4"><div class="card h-100"><div class="card-body"><h4>Admin</h4><p>Manage doctors and view hospital appointment information.</p></div></div></div>
+</div>
+</section>
+
+<section id="login" class="d-none">
+<div class="form-card">
+<h2>Login</h2>
+<p class="text-muted">Demo accounts are shown below.</p>
+<div class="alert alert-info">
+<b>Admin:</b> admin / admin123 &nbsp; | &nbsp;
+<b>Doctor:</b> ananya / doctor123 &nbsp; | &nbsp;
+<b>Patient:</b> patient / patient123
+</div>
+<input id="loginUser" class="form-control mb-3" placeholder="Username">
+<input id="loginPass" type="password" class="form-control mb-3" placeholder="Password">
+<button class="btn btn-primary" onclick="login()">Login</button>
+<button class="btn btn-link" onclick="showHome()">Back</button>
+<div id="loginMsg" class="mt-3"></div>
+</div>
+</section>
+
+<section id="register" class="d-none">
+<div class="form-card">
+<h2>Patient Registration</h2>
+<input id="regName" class="form-control mb-3" placeholder="Full name">
+<input id="regUser" class="form-control mb-3" placeholder="Username">
+<input id="regPass" type="password" class="form-control mb-3" placeholder="Password">
+<input id="regPhone" class="form-control mb-3" placeholder="Phone">
+<button class="btn btn-success" onclick="register()">Register</button>
+<button class="btn btn-link" onclick="showHome()">Back</button>
+<div id="regMsg" class="mt-3"></div>
+</div>
+</section>
+
+<section id="dashboard" class="d-none">
+<div class="d-flex justify-content-between align-items-center mb-4">
+<h2 id="dashTitle">Dashboard</h2>
+<button class="btn btn-outline-danger btn-sm" onclick="logout()">Logout</button>
+</div>
+<div id="dashContent"></div>
+</section>
+</main>
+
+<footer class="text-center py-4 border-top">Hospital Management System • College Project</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
